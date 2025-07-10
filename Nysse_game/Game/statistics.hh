@@ -1,10 +1,11 @@
 #ifndef STATISTICS_HH
 #define STATISTICS_HH
 
-//#include "interfaces/istatistics.hh"
-#include "../Course/CourseLib/interfaces/istatistics.hh"
+#include "interfaces/istatistics.hh"
 #include <iostream>
 #include <map>
+
+namespace GameSide {
 
 // First int of the pair represents the removed nysse's multiplier of given points
 //and the second the left nysse's multiplier of given points.
@@ -64,5 +65,7 @@ private:
     void updatePoints(int points);
 
 };
+
+} // namespace GameSide
 
 #endif // STATISTICS_HH

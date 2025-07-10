@@ -1,8 +1,8 @@
 #include "statistics.hh"
 
 
-//namespace GameSide
-//{
+namespace GameSide
+{
 
 Statistics::Statistics(std::string difficulty_level):
     alien_died_(false),
@@ -109,4 +109,4 @@ void Statistics::updatePoints(int points)
 {
     points_ += points;
 }
-//}
+}

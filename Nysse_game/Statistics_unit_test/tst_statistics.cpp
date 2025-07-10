@@ -1,7 +1,9 @@
 #include <QtTest>
 #include <QString>
-#include "../Course/CourseLib/interfaces/istatistics.hh"
+#include <QDebug>
+// #include "../Course/CourseLib/interfaces/istatistics.hh"
 #include "../Game/statistics.hh"
+//#include "statistics.hh"
 
 
 // Unit test for all reasonable and accessible member functions in statistics class.
@@ -47,20 +49,20 @@ void statistics::make_test_data()
 
 void statistics::test_givePoints()
 {
-    Statistics S("NORMAL");
+    GameSide::Statistics S("NORMAL");
     QVERIFY2(S.givePoints() == 0, "Wrong points");
 }
 
 void statistics::test_passengerDied()
 {
-    Statistics S("NORMAL");
+    GameSide::Statistics S("NORMAL");
     S.passengerDied(3);
     QVERIFY2(S.givePoints() == 15, "Wrong update");
 }
 
 void statistics::test_nysseLeft()
 {
-    Statistics S("NORMAL");
+    GameSide::Statistics S("NORMAL");
     S.nysseLeft();
     QVERIFY2(S.givePoints() == -40, "Wrong Nysse point update");
 
@@ -68,14 +70,14 @@ void statistics::test_nysseLeft()
 
 void statistics::test_nysseIsRemoved()
 {
-    Statistics S("NORMAL");
+    GameSide::Statistics S("NORMAL");
     S.nysseIsRemoved(3);
     QVERIFY2(S.givePoints() == 30, "Wrong passenger point update" );
 }
 
 void statistics::test_NoPrey()
 {
-    Statistics S("NORMAL");
+    GameSide::Statistics S("NORMAL");
     S.noPrey();
     QVERIFY2(S.sayAlienIsDead() == false, "Alien died when not supposed to");
 
@@ -83,7 +85,7 @@ void statistics::test_NoPrey()
 
 void statistics::test_sayAlienIsDead()
 {
-    Statistics S("NORMAL");
+    GameSide::Statistics S("NORMAL");
     S.sayAlienIsDead();
     QVERIFY2(S.sayAlienIsDead() == false, "Alien died when not supposed to");
 }
