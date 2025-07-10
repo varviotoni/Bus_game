@@ -36,7 +36,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(StartDialog* d, QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     void setSize(int w, int h);
@@ -72,7 +72,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    StartDialog *dialog_;
     QGraphicsScene *map;
     QTimer *timer;
 
